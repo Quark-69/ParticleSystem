@@ -29,10 +29,11 @@ void App::Run()
 
 		processInput();
 
-
 		window_->update();
 
 		shader.activate();
+
+		pSystem.Update(dt);
 
 		glm::mat4 projection = glm::ortho(0.0f, (float)window_->getSreenWidth(), (float)window_->getSreenHeight(), 0.0f, -1.0f, 1.0f);
 		shader.setMat4("projection", projection);
